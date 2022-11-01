@@ -1,0 +1,12 @@
+.nav_serarch{
+    /* padding-left: 50%; */
+    display: flex;
+    flex-direction: row;
+    /* width:90%; */
+}
+.suggestions{
+    cursor: pointer;
+}
+.suggestions:hover{
+    background-color: lightgray;
+}

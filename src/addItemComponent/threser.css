@@ -1,0 +1,17 @@
+.sticky{
+    position: -webkit-sticky;
+    position: sticky !important;
+    float: right;
+}
+
+.Increment{
+    display: flex;
+}
+.buttonIcon{
+    margin-left: 20px !important;
+    margin-top: 20px !important;
+    height:20% !important;
+    width: 10% !important;
+   
+    
+}
