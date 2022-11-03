@@ -11,19 +11,11 @@ export default function Home() {
     fe();
   },[])
 
-  const fe = async()=>{
-    console.log("hello");
-    const fetchData = await fetch("https://tractorwalla.herokuapp.com/home", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
-    const datas = await fetchData.json();
-    
-    setUser(datas)
+  const fe = ()=>{
+    fetch("/home")
+    .then((response) => response.json())
+    .then((data) => setUser(data));
+  
   }
   return (
     <Stack sx={{ width: '100%' }} spacing={2}>

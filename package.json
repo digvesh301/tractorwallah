@@ -45,9 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "engines": { "node": "16.16.0","npm": "8.15.1"},
-  
-    "stack": "heroku-22"
- 
-
+  "proxy":"https://tractorwalla.herokuapp.com"
 }

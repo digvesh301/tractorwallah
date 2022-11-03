@@ -5,22 +5,18 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import Alerts from "../alert/alert";
 
-
-
-
-
 const Login = () => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   const showToastMessage = () => {
-      toast.success('Success Notification !', {
-          position: toast.POSITION.TOP_RIGHT
-      });
+    toast.success("Success Notification !", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
   const lognIn = async () => {
-    const res = await fetch("https://tractorwalla.herokuapp.com/login", {
+    const res = await fetch("/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -31,14 +27,14 @@ const Login = () => {
       }),
     });
     const message = await res.json();
-    if (res.status===200) {
-        toast.success(`${message.message} !`, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          navigate('/')
-    }else{
-        Alerts(message.message,1)
-        navigate('/login')
+    if (res.status === 200) {
+      toast.success(`${message.message} !`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      navigate("/");
+    } else {
+      Alerts(message.message, 1);
+      navigate("/login");
     }
   };
 
@@ -104,7 +100,11 @@ const Login = () => {
 
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <p class="mb-0 me-2">Don't have an account?</p>
-                      <button type="button" class="btn btn-outline-danger" onClick={()=>showToastMessage()}>
+                      <button
+                        type="button"
+                        class="btn btn-outline-danger"
+                        onClick={() => showToastMessage()}
+                      >
                         Create new
                       </button>
                     </div>
