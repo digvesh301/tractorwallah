@@ -45,5 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"https://tractorwalla.herokuapp.com"
+  "proxy":"https://tractorwalla.herokuapp.com",
+  "devServer": {
+    "allowedHosts": "all" 
+}
 }
